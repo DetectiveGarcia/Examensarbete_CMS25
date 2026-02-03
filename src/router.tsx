@@ -1,13 +1,21 @@
 import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout";
 import HomePage from "./pages/HomePage";
+import CenterLayout from "./layouts/CenterLayout";
+import NotFound from "./pages/NotFound";
 
 
 export const router = createBrowserRouter([
     {
         element: <AppLayout />,
         children: [
-            { path: "/", element: <HomePage /> }
+            { path: "/", handle: { title: "Home" },  element: <HomePage /> }
+        ]
+    },
+        {
+        element: <CenterLayout />,
+        children: [
+            { path: "*", handle: { title: "Not Found" }, element: <NotFound /> }
         ]
     }
 ]);
