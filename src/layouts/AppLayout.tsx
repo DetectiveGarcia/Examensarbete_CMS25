@@ -1,5 +1,9 @@
 import { useEffect } from "react";
 import { Outlet, useMatches, type RouteObject } from "react-router-dom";
+import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
+
+//https://dreambroker.com/channel/xfs1fcb0/44ynxdzh - kolla från 02:06:00
 
 const AppLayout = () => {
   const matches: RouteObject[] = useMatches();
@@ -16,11 +20,11 @@ const AppLayout = () => {
 
   return (
     <div className="app-layout">
-      <header>header</header>
+      <Header />
       <main>
         <Outlet />
       </main>
-      <footer>footer</footer>
+      <Footer />
     </div>
   );
 };
